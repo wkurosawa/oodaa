@@ -1,0 +1,6 @@
+<tr id="customer_<%=customer.id%>" is="turbo-frame">
+  <td><%= customer.name %></td>
+  <td><%= customer.phone %></td>
+  <td><%= link_to "Edit", edit_customer_path(customer) %></td>
+  <td><%= button_to "Destroy", customer, method: :delete %></td>
+</tr>

@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Customers" %>
+
+<h1>Customers</h1>
+
+<%= turbo_stream_from "customers" %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody id="customers" is="turbo-frame">
+    <% @customers.each do |customer| %>
+      <%= render customer %>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>New Customer</h2>
+<%= turbo_frame_tag "new_customer", src: new_customer_path, target: "_top" %>
